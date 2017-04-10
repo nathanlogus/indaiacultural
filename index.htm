@@ -1,0 +1,83 @@
+﻿<html lang="pt-br">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+	<title>IndaiáCultural</title>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="icon" href="img/logo.png" />
+
+
+ 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<script src="scripts/main.js"></script>
+
+</head>
+<body>
+
+	<div id="logo">
+	<img src="img/logo.png" width="20%">
+	</div>
+
+	<nav>
+	<a href="index.htm">Inicio</a> |
+	<a href="projeto.htm">Sobre o projeto</a> |
+	<a href="contato.htm">Fale Conosco</a>	
+	</nav>
+
+	<div id="conteudo">
+	<h1> Mapa cultural</h1>
+
+	<div id="map">
+	<script>
+
+	var mymap = L.map('map').setView([-23.084285,-47.208385], 14);
+
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibmF0aGFucGlycmFsIiwiYSI6ImNqMHZwZTRyZDAwMzIycXFpaWY1dXllaGQifQ.sU8gvcmYRRlLYwW0i8FpBw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);
+
+
+	var candelaria = L.marker([-23.090285, -47.218975]).addTo(mymap);
+	var parqueeco = L.marker([-23.077192, -47.216385]).addTo(mymap);
+	var chafariz = L.marker([-23.085619, -47.222330]).addTo(mymap);
+	var casarao = L.marker([-23.091223, -47.2195750]).addTo(mymap);
+	var ferrovia = L.marker([-23.092970, -47.216715]).addTo(mymap);
+	var pracarui = L.marker([-23.088760, -47.212628]).addTo(mymap);
+	var museuagua = L.marker([-23.084191, -47.180546]).addTo(mymap);
+	var bosquesaber = L.marker([-23.097412, -47.203532]).addTo(mymap);
+
+	candelaria.bindPopup("<b>Igreja Nossa Senhora da Candelária</b><br>Praça Leonor Barros Camargo, s/n – Candelária.<br>Fone: (19) 3875 2108.<br> Fechada às segundas-feiras para limpeza e manutenção.<br> Entrada Gratuita.<br><img src='img/candelaria.jpg' height='25%' alt='igreja candelária'>");
+
+	parqueeco.bindPopup("<b>Parque Ecológico</b><br>Av. Eng. Fábio Roberto Barnabé, s/n. <br> Aberto 24 Horas.<br> Local público.<br><img src='img/parque.jpg' height='25%' alt='parque ecológico de indaiatuba'>")
+
+	chafariz.bindPopup("<b>Praça do Chafariz</b><br>Praça Elis Regina, s/n – Vila Sfeir. <br> Aberto 24 Horas.<br> Local público.<br><img src='img/chafariz.jpg' height='25%' alt='chafariz de indaiatuba'>")
+
+	casarao.bindPopup("<b>Museu do Casarão Pau Preto</b><br>Rua Pedro Gonçalves, 477.<br> Fone: (19) 3875 8383<br> Funcionamento: 2ª à sábado das 9 às 17 horas Domingos: Museu das 8 às 12 horas Bosque das 13 às 17 horas <br><br> <b>Biblioteca Pública Municipal</b> <br> Rua Osvaldo Cruz, 1015 - Cidade Nova I <br> Segunda a sexta das 09h às 17h e sábado das 09h às 13h. <br> Fone: (19) 3834 6633<br> Entrada gratuita.<br><img src='img/casarao.jpg' height='25%' alt='casarao pau preto'>")
+
+	ferrovia.bindPopup("<b>Museu Ferroviário</b><br>Praça Newton Prado, s/n. <br> Fone: (19) 3816 4917 <br>De segunda a sexta das 08h às 12h e das 14h às 18h, sábados, domingos e feriados das 09h30 às 12h30. <br> Entrada Gratuita.<br><img src='img/ferrovia.jpg' height='25%' alt='Museu Ferroviário'>")
+
+	pracarui.bindPopup("<b>Feira das Artes</b><br>Praça Rui Barbosa, s/n. - Centro <br> Sábados das 09h às 17h. <br>Entrada gratuita.<br>Local público.<br><img src='img/feira.jpg' height='25%' alt='Museu Ferroviário'>")
+
+	museuagua.bindPopup("<b>Museu da Água</b><br>Rua do Museu, 205 - Tombadouros, Indaiatuba - SP<br> Fone: (19) 3834 9433 <br>Terça à Domingo e Feriados: 09:00 às 16:00hs.<br>Permanência Máxima: até às 17:00hs. <br> Entrada Gratuita.<br><img src='img/museu.jpg' height='25%' alt='Museu Ferroviário'>")
+
+	bosquesaber.bindPopup("<b>Escola Ambiental Bosque do Saber</b><br>Rua João Batista D’Alessandro, 610.<br> Fone: (19) 3875-7210.<br>Sábados e domingos das 08h às 17h. <br>Entrada gratuita.<br><img src='img/saber.jpg' height='25%' alt='Museu Ferroviário'>")
+
+
+
+</script>	
+
+	</div>
+</div>
+</body>
+
+<footer>
+	<p>
+  Desenvolvido por: <a href="mailto:nathanpirral@gmail.com">Nathan Ribeiro </a> |
+  Todos os direitos reservados © 2017 </p>
+</footer>
+</html>
